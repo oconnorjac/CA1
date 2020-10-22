@@ -11,6 +11,9 @@ public class App {
 
     public static void main(String[] args) {
 
+        //table header
+        System.out.println("Student Number: \t Grade:");
+
         readFile();
 
     }
@@ -27,21 +30,22 @@ public class App {
             input.useDelimiter("[,\r\n]+");
 
             while (input.hasNext()) {
-
                 int studentNumber = input.nextInt();
+                System.out.print(studentNumber+"\t\t\t\t\t");
+                //read in codes & grades and store in two separate arrays
                 for (int i = 0; i < 8; i++) {
                     codes[i] = input.nextInt();
                     grades[i] = input.nextInt();
                 }
                 selectFiveGrades(codes, grades);
 
-                //testing
-                System.out.println("studentNumber = " + studentNumber);
-                System.out.println("codes = " + Arrays.toString(codes));
-                System.out.println("grades = " + Arrays.toString(grades));
+                //for testing purposes
+                //System.out.println("studentNumber = " + studentNumber);
+                //System.out.println("codes = " + Arrays.toString(codes));
+                //System.out.println("grades = " + Arrays.toString(grades));
             }
             input.close();
-        } catch (IOException e) {
+        } catch (IOException e) {  //in case the file is not found
             System.out.println(e.getMessage());
         }
     }
@@ -71,18 +75,18 @@ public class App {
             }
         }
         //now find 2 largest grades -> sort array & take last 2 elements
-        //put them into selectedGrades array
         Arrays.sort(tempGrades);
+        //put them into selectedGrades array
         selectedGrades[3] = tempGrades[tempGrades.length - 1];
         selectedGrades[4] = tempGrades[tempGrades.length - 2];
+
+        //call method to calculate average grade
+        System.out.println(calculateAverage(selectedGrades));
 
         //for testing purposes
         //System.out.println("selectedGrades = " + Arrays.toString(selectedGrades));
         //System.out.println("tempGrades = " + Arrays.toString(tempGrades));
         //System.out.println("average = " + calculateAverage(selectedGrades));
-
-        //call function to calculate the average of the selected grades
-        calculateAverage(selectedGrades);
 
         return selectedGrades;
 
@@ -90,7 +94,7 @@ public class App {
 
     private static double calculateAverage(int[] selectedGrades) {
 
-        // to calculate the average grades
+        // use for each to calculate the sum of grades
         int sum = 0;
         for (int grade : selectedGrades) {
             sum += grade;
