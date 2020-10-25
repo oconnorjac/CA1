@@ -1,5 +1,5 @@
 //JACQUELINE O'CONNOR D00233669 SD2B
-//https://github.com/oconnorjac/CA1
+//https://github.com/oconnorjac/CA1.git
 package com.dkit.sd2b.jacquelineoconnor;
 
 import java.io.File;
