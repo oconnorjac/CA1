@@ -11,7 +11,7 @@ import java.util.Scanner;
  * <h1>App</h1>
  * <p>
  * The App program is a Java program to generate a weighting value
- * based on Junior Cert. results to be used in the calculation of
+ * based on Junior Certificate results to be used in the calculation of
  * leaving certificate grades.
  * </p>
  *
@@ -24,7 +24,8 @@ public class App {
     /**
      * Main
      *
-     * @param args
+     * @param args array of strings which stores arguments passed
+     * by command line while starting the program
      */
     public static void main(String[] args) {
 
@@ -81,7 +82,7 @@ public class App {
      * Using a for loop to go through the arrays, when they pass condition in the if
      * statement, they are added to a temporary grade array. This array is then
      * sorted to then retrieve the last 2 elements as these are the two largest grades.
-     * Do not include the grade for subject CSPE code = 218.
+     * Do not include the grade for subject CSPE, code = 218.
      * These two elements are then added to the selectedGrades array along with the
      * grades of the core subjects (ie: irish, english & maths) and this is used in a
      * separate method to calculate the overall average grade.
@@ -89,11 +90,11 @@ public class App {
      *
      * @param codes array of subject codes
      * @param grades array of corresponding grades
-     * @return selectedGrades the array of selected grades for calculation
+     * @return selectedGrades the array of 5 selected grades for calculation
      */
     public static int[] selectFiveGrades(int[] codes, int[] grades) {
 
-        int[] selectedGrades = new int[5];
+        int[] selectedGrades = new int[5]; //size 5 because there are 5 grades required
         int[] tempGrades = new int[8];
 
         for (int i = 0; i < 8; i++) {
@@ -127,7 +128,6 @@ public class App {
         //System.out.println("average = " + calculateAverage(selectedGrades));
 
         return selectedGrades;
-
     }
 
     /**

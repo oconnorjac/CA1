@@ -8,14 +8,17 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.io.File;
+
 import static org.junit.Assert.*;
 
 /**
  * @author Jacqueline O'Connor
  */
-public class AppIT {
+public class AppTest {
 
-    public AppIT() {
+    public AppTest() {
     }
 
     @BeforeClass
@@ -38,7 +41,8 @@ public class AppIT {
      * Test of main method, of class App.
      * <p>
      * This test demonstrates that the heading is printed correctly
-     * and the method call to read the file works.
+     * and the method call to read the file works and the rest of
+     * the program runs. The main is void.
      * </p>
      */
     @Test
@@ -51,13 +55,15 @@ public class AppIT {
     /**
      * Test of readFile method, of class App.
      * <p>
-     * This test demonstrates that the file is read in.
+     * This test demonstrates that the file exists
+     * and can be found using the pathname.
      * </p>
      */
     @Test
     public void testReadFile() {
         System.out.println("readFile");
-        App.readFile();
+        File inputFile = new File("JC_Results.txt");
+        assertTrue(inputFile.exists());
     }
 
     /**
@@ -74,6 +80,8 @@ public class AppIT {
         int[] grades = {65, 58, 45, 60, 50, 48, 42, 60};
         int[] expResult = {65, 58, 45, 60, 60};
         int[] result = App.selectFiveGrades(codes, grades);
+        System.out.println("Expected = "+ Arrays.toString(expResult));
+        System.out.println("Result = "+ Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
@@ -88,8 +96,11 @@ public class AppIT {
     public void testCalculateAverage() {
         System.out.println("calculateAverage");
         int[] selectedGrades = {65, 58, 45, 60, 60};
+        System.out.println("selectedGrades = "+ Arrays.toString(selectedGrades));
         double expResult = 57.6;
         double result = App.calculateAverage(selectedGrades);
+        System.out.println("Expected = "+expResult);
+        System.out.println("Result = "+result);
         assertEquals(expResult, result, 0.01);
     }
 
@@ -104,8 +115,11 @@ public class AppIT {
     public void testCalculateAverage1() {
         System.out.println("calculateAverage1");
         int[] selectedGrades = {65, 58, 45, 0, 60};
+        System.out.println("selectedGrades = "+Arrays.toString(selectedGrades));
         double expResult = 45.6;
         double result = App.calculateAverage(selectedGrades);
+        System.out.println("Expected = "+expResult);
+        System.out.println("Result = "+result);
         assertEquals(expResult, result, 0.01);
     }
 
@@ -123,6 +137,8 @@ public class AppIT {
         int[] grades = {74, 100, 89, 67, 89, 55, 65, 98};
         int[] expResult = {65, 55, 74, 98, 89};
         int[] result = App.selectFiveGrades(codes, grades);
+        System.out.println("Expected = "+ Arrays.toString(expResult));
+        System.out.println("Result = "+ Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
@@ -137,10 +153,13 @@ public class AppIT {
     @Test
     public void testSelectFiveGrades2() {
         System.out.println("selectFiveGrades2");
+        System.out.println("This test is designed to fail.");
         int[] codes = {3, 218, 52, 40, 46, 2, 1, 27};
         int[] grades = {74, 100, 89, 67, 89, 55, 65, 98};
         int[] expResult = {65, 55, 74, 100, 98};
         int[] result = App.selectFiveGrades(codes, grades);
+        System.out.println("Expected = "+ Arrays.toString(expResult));
+        System.out.println("Result = "+ Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
@@ -159,6 +178,8 @@ public class AppIT {
         int[] grades = {74, 58, 73, 67, 89, 55, 65, 98};
         int[] expResult = {65, 55, 98, 89, 74};
         int[] result = App.selectFiveGrades(codes, grades);
+        System.out.println("Expected = "+ Arrays.toString(expResult));
+        System.out.println("Result = "+ Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
@@ -176,6 +197,8 @@ public class AppIT {
         int[] grades = {74, 58, 73, 67, 89, 55, 65, 98};
         int[] expResult = {58,55,67,98,89};
         int[] result = App.selectFiveGrades(codes, grades);
+        System.out.println("Expected = "+ Arrays.toString(expResult));
+        System.out.println("Result = "+ Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
