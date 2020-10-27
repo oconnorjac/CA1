@@ -80,8 +80,8 @@ public class AppTest {
         int[] grades = {65, 58, 45, 60, 50, 48, 42, 60};
         int[] expResult = {65, 58, 45, 60, 60};
         int[] result = App.selectFiveGrades(codes, grades);
-        System.out.println("Expected = "+ Arrays.toString(expResult));
-        System.out.println("Result = "+ Arrays.toString(result));
+        System.out.println("Expected = " + Arrays.toString(expResult));
+        System.out.println("Result = " + Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
@@ -96,11 +96,11 @@ public class AppTest {
     public void testCalculateAverage() {
         System.out.println("calculateAverage");
         int[] selectedGrades = {65, 58, 45, 60, 60};
-        System.out.println("selectedGrades = "+ Arrays.toString(selectedGrades));
+        System.out.println("selectedGrades = " + Arrays.toString(selectedGrades));
         double expResult = 57.6;
         double result = App.calculateAverage(selectedGrades);
-        System.out.println("Expected = "+expResult);
-        System.out.println("Result = "+result);
+        System.out.println("Expected = " + expResult);
+        System.out.println("Result = " + result);
         assertEquals(expResult, result, 0.01);
     }
 
@@ -115,11 +115,11 @@ public class AppTest {
     public void testCalculateAverage1() {
         System.out.println("calculateAverage1");
         int[] selectedGrades = {65, 58, 45, 0, 60};
-        System.out.println("selectedGrades = "+Arrays.toString(selectedGrades));
+        System.out.println("selectedGrades = " + Arrays.toString(selectedGrades));
         double expResult = 45.6;
         double result = App.calculateAverage(selectedGrades);
-        System.out.println("Expected = "+expResult);
-        System.out.println("Result = "+result);
+        System.out.println("Expected = " + expResult);
+        System.out.println("Result = " + result);
         assertEquals(expResult, result, 0.01);
     }
 
@@ -137,8 +137,8 @@ public class AppTest {
         int[] grades = {74, 100, 89, 67, 89, 55, 65, 98};
         int[] expResult = {65, 55, 74, 98, 89};
         int[] result = App.selectFiveGrades(codes, grades);
-        System.out.println("Expected = "+ Arrays.toString(expResult));
-        System.out.println("Result = "+ Arrays.toString(result));
+        System.out.println("Expected = " + Arrays.toString(expResult));
+        System.out.println("Result = " + Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
@@ -158,8 +158,8 @@ public class AppTest {
         int[] grades = {74, 100, 89, 67, 89, 55, 65, 98};
         int[] expResult = {65, 55, 74, 100, 98};
         int[] result = App.selectFiveGrades(codes, grades);
-        System.out.println("Expected = "+ Arrays.toString(expResult));
-        System.out.println("Result = "+ Arrays.toString(result));
+        System.out.println("Expected = " + Arrays.toString(expResult));
+        System.out.println("Result = " + Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
@@ -178,8 +178,8 @@ public class AppTest {
         int[] grades = {74, 58, 73, 67, 89, 55, 65, 98};
         int[] expResult = {65, 55, 98, 89, 74};
         int[] result = App.selectFiveGrades(codes, grades);
-        System.out.println("Expected = "+ Arrays.toString(expResult));
-        System.out.println("Result = "+ Arrays.toString(result));
+        System.out.println("Expected = " + Arrays.toString(expResult));
+        System.out.println("Result = " + Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 
@@ -195,10 +195,10 @@ public class AppTest {
         System.out.println("selectFiveGrades4");
         int[] codes = {27, 1, 52, 3, 46, 2, 13, 40};
         int[] grades = {74, 58, 73, 67, 89, 55, 65, 98};
-        int[] expResult = {58,55,67,98,89};
+        int[] expResult = {58, 55, 67, 98, 89};
         int[] result = App.selectFiveGrades(codes, grades);
-        System.out.println("Expected = "+ Arrays.toString(expResult));
-        System.out.println("Result = "+ Arrays.toString(result));
+        System.out.println("Expected = " + Arrays.toString(expResult));
+        System.out.println("Result = " + Arrays.toString(result));
         assertArrayEquals(expResult, result);
     }
 

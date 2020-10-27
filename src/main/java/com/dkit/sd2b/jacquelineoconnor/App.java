@@ -25,7 +25,7 @@ public class App {
      * Main
      *
      * @param args array of strings which stores arguments passed
-     * by command line while starting the program
+     *             by command line while starting the program
      */
     public static void main(String[] args) {
 
@@ -88,7 +88,7 @@ public class App {
      * separate method to calculate the overall average grade.
      * </p>
      *
-     * @param codes array of subject codes
+     * @param codes  array of subject codes
      * @param grades array of corresponding grades
      * @return selectedGrades the array of 5 selected grades for calculation
      */
